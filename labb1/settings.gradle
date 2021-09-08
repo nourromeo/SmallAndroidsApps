@@ -7,4 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "labb1"
-include ':Toest'
+include ':app'
+include ':Toest:calculator'
