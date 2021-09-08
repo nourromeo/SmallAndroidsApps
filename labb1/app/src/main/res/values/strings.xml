@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">labb1</string>
+    <string name="new_name">I change the text</string>
 </resources>
