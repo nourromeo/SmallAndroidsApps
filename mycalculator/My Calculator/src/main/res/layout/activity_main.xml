@@ -8,28 +8,55 @@
 
     <EditText
         android:id="@+id/editTextNumber2"
-        android:layout_width="wrap_content"
+        android:layout_width="218dp"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="skriv andra nummer"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewOperators"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="204dp"
-        android:layout_height="61dp"
+        android:layout_width="219dp"
+        android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:hint="Result"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="minusClick"
+        android:text="@string/Minus"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="plusClick"
+        android:text="@string/Plus"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/minusButton"
+        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
 
     <Button
         android:id="@+id/multButton"
@@ -41,45 +68,21 @@
         android:text="@string/multiplikation"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/divisionButton"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.647"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/plusButton" />
-
-    <Button
-        android:id="@+id/plusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="plusClick"
-        android:text="@string/Plus"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/minusButton"
-        app:layout_constraintHorizontal_bias="0.722"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
-
-    <Button
-        android:id="@+id/minusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="76dp"
-        android:onClick="minusClick"
-        android:text="@string/Minus"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
 
     <Button
         android:id="@+id/divisionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="76dp"
         android:onClick="divClick"
         android:text="@string/division"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minusButton" />
 
     <Button
@@ -92,9 +95,10 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/multButton"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/textViewOperators"
@@ -110,13 +114,14 @@
 
     <EditText
         android:id="@+id/editTextNumber1"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Skriv först nummer"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
