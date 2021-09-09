@@ -6,6 +6,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "labb1"
+rootProject.name = "Toast"
 include ':app'
-include ':Toest:calculator'
