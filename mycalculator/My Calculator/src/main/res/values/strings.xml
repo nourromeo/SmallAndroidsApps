@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">my calculator</string>
+    <string name="Plus">+</string>
+    <string name="Minus">-</string>
+    <string name="multiplikation">x</string>
+    <string name="division">/</string>
+    <string name="clear">Clear</string>
+    <string name="result">Result</string>
+    <string name="operators" />
+</resources>
