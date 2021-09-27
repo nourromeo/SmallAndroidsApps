@@ -57,6 +57,8 @@ public class GameActivity extends AppCompatActivity {
         chances = 0;
         txtChancesCounter.setText("7");
         txtChancesCounter.setTextColor(Color.parseColor("#928722"));
+        txtWord.setTextColor(Color.parseColor("#928722"));
+
         word =  wordList.showWord(); // skapa ett ord från klassen WordClass.
         charArr = word.toCharArray(); // byte ord till list av char
 
@@ -95,6 +97,7 @@ public class GameActivity extends AppCompatActivity {
                     Log.d(TAG,"Winning");
                     txtResult.setText(R.string.you_win);
                     txtResult.setTextColor(Color.parseColor("#1BBA70"));
+                    txtWord.setTextColor(Color.parseColor("#1BBA70"));
                     closeKeyboard();
                 }
             }
@@ -105,6 +108,7 @@ public class GameActivity extends AppCompatActivity {
                     Log.d(TAG, "Losing");
                     txtResult.setText(R.string.you_lose);
                     txtResult.setTextColor(Color.parseColor("#FD0000"));
+                    txtWord.setTextColor(Color.parseColor("#FD0000"));
                     txtWord.setText(word);
                     closeKeyboard();
                 }
