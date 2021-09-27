@@ -20,7 +20,7 @@ public class GameActivity extends AppCompatActivity {
     private static final int MAX_TRIES = 6;
     private TextView txtWord, txtLetterIn, txtResult, txtChancesCounter;
     private String word, letterIn = " ", wordToChar;
-    private int chances = 0;
+    private int chances;
     private EditText userInput;
 
     @Override
@@ -54,6 +54,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void hangman(){
+        chances = 0;
         txtChancesCounter.setText("7");
         txtChancesCounter.setTextColor(Color.parseColor("#928722"));
         word =  wordList.showWord(); // skapa ett ord från klassen WordClass.

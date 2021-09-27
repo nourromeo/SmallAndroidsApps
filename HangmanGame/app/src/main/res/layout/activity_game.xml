@@ -148,15 +148,16 @@
             android:gravity="center">
 
             <EditText
+                android:id="@+id/userInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/userInput"
                 android:layout_column="0"
                 android:gravity="center"
                 android:hint="Skriv en bokstav här"
                 android:inputType="text"
                 android:maxLength="1"
                 android:maxLines="1"
+                android:minHeight="48dp"
                 android:text="@string/user_inputt"
                 android:textAlignment="center"
                 android:textColor="@color/secondary_color"
@@ -177,6 +178,7 @@
                 android:layout_column="0"
                 android:backgroundTint="@color/secondary_color"
                 android:gravity="center"
+                android:minHeight="48dp"
                 android:onClick="resetClick"
                 android:text="Spela igen"
                 android:textColor="@color/primary_color"

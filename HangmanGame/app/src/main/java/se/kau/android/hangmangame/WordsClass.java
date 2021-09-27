@@ -10,7 +10,7 @@ public class WordsClass extends AppCompatActivity {
     private static String[] words = {
             "matrix", "microwave", "nightclub", "sweden", "oxygen",
             "subway", "wave", "whiskey", "Nour", "Eritrea", "black",
-            "minecraft", "youth", "yummy", "zombie", "white", "about",
+            "minecraft", "youth", "yummy", "covid", "karlstad", "zombie", "white", "about",
             "account", "acid", "act", "addition", "again", "against",
             "agreement", "argument", "authority","clean", "clear",
             "cloud", "colour", "comfort", "company", "complex",

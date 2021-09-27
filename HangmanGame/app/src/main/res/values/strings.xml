@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">HangmanGame</string>
+    <string name="app_name">Hangman_labb2</string>
+    <string name="guessed_letters" />
+    <string name="guess_word" />
+    <string name="tries_remain" />
+    <string name="user_inputt" />
+    <string name="you_win">YOU WIN</string>
+    <string name="you_lose">YOU LOSE</string>
 </resources>
