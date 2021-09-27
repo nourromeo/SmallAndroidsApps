@@ -60,6 +60,7 @@ public class GameActivity extends AppCompatActivity {
         word =  wordList.showWord(); // skapa ett ord från klassen WordClass.
         charArr = word.toCharArray(); // byte ord till list av char
 
+        // https://www.youtube.com/watch?v=snzuK-UB4qQ
         for (int i = 1; i < charArr.length - 1; i++){
             charArr[i]  = '_';
         }
