@@ -17,6 +17,7 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
     private static final String TAG = "Hangman";
+    Random rand = new Random();
     private final WordsClass wordList = new WordsClass();
     private char[] charArr;
     private static final int MAX_TRIES = 6;
@@ -24,7 +25,6 @@ public class GameActivity extends AppCompatActivity {
     private String word, letterIn = " ", wordToChar;
     private int chances;
     private EditText userInput;
-    Random rand = new Random();
     int lttrPosition;
 
     @Override
