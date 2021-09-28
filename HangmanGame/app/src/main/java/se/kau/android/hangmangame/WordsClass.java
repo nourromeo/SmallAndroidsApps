@@ -7,6 +7,7 @@ import java.util.Random;
 public class WordsClass extends AppCompatActivity {
     Random rand = new Random();
     // jag fick den från https://www.youtube.com/watch?v=snzuK-UB4qQ
+    // men klass var min ide
     private static String[] words = {
             "matrix", "microwave", "nightclub", "sweden", "oxygen",
             "subway", "wave", "whiskey", "Nour", "Eritrea", "black",
