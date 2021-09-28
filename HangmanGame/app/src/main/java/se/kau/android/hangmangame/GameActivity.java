@@ -88,6 +88,7 @@ public class GameActivity extends AppCompatActivity {
                 Log.d(TAG,"letter is not displayed");
                 lttrPosition = word.indexOf(lttr); // Position av index (bokstav)
                 for(int i = 0; i < lttrPosition; i++){
+                    // https://www.youtube.com/watch?v=snzuK-UB4qQ
                     charArr[lttrPosition] = word.charAt(lttrPosition);
                     lttrPosition = word.indexOf(lttr, lttrPosition + 1);
                 }
