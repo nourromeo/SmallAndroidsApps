@@ -71,7 +71,6 @@ public class GameActivity extends AppCompatActivity {
             charArr[i]= '_';
             // charArr[rand.nextInt(i)+1]= '_';
             // charArr[rand.nextInt(charArr.length - 1)]  = '_';
-
         }
 
         wordToChar = String.valueOf(charArr);
@@ -82,7 +81,7 @@ public class GameActivity extends AppCompatActivity {
         txtWord.setText(displayedWord.toString());
     }
 
-    private void checkWinOrLose(char lttr){
+    public void checkWinOrLose(char lttr){
         if(word.indexOf(lttr) >= 0){
             Log.d(TAG,"letter was found");
             if(wordToChar.indexOf(lttr) == -1){
