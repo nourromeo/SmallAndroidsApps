@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class GameActivity extends AppCompatActivity {
     private static final String TAG = "Hangman";
     private final WordsClass wordList = new WordsClass();
@@ -22,6 +24,8 @@ public class GameActivity extends AppCompatActivity {
     private String word, letterIn = " ", wordToChar;
     private int chances;
     private EditText userInput;
+    Random rand = new Random();
+    int lttrPosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,8 +67,11 @@ public class GameActivity extends AppCompatActivity {
         charArr = word.toCharArray(); // byte ord till list av char
 
         // https://www.youtube.com/watch?v=snzuK-UB4qQ
-        for (int i = 1; i < charArr.length - 1; i++){
-            charArr[i]  = '_';
+        for (int i = 1; i < charArr.length -1; i++){
+            charArr[i]= '_';
+            // charArr[rand.nextInt(i)+1]= '_';
+            // charArr[rand.nextInt(charArr.length - 1)]  = '_';
+
         }
 
         wordToChar = String.valueOf(charArr);
@@ -75,15 +82,15 @@ public class GameActivity extends AppCompatActivity {
         txtWord.setText(displayedWord.toString());
     }
 
-    private void checkWinOrLose(char letter){
-        if(word.indexOf(letter ) >= 0){
+    private void checkWinOrLose(char lttr){
+        if(word.indexOf(lttr) >= 0){
             Log.d(TAG,"letter was found");
-            if(wordToChar.indexOf(letter) == -1){
+            if(wordToChar.indexOf(lttr) == -1){
                 Log.d(TAG,"letter is not displayed");
-                int letterPosition = word.indexOf(letter); // Position av index (bokstav)
-                for(int i = 0; i < letterPosition; i++){
-                    charArr[letterPosition] = word.charAt(letterPosition);
-                    letterPosition = word.indexOf(letter, letterPosition + 1);
+                lttrPosition = word.indexOf(lttr); // Position av index (bokstav)
+                for(int i = 0; i < lttrPosition; i++){
+                    charArr[lttrPosition] = word.charAt(lttrPosition);
+                    lttrPosition = word.indexOf(lttr, lttrPosition + 1);
                 }
                 wordToChar = String.valueOf(charArr);
 
@@ -115,10 +122,10 @@ public class GameActivity extends AppCompatActivity {
             }
         }
 
-        if(word.indexOf(letter ) < 0){
+        if(word.indexOf(lttr ) < 0){
             Log.d(TAG,"letter was not found");
-            if(letterIn.indexOf(letter) < 0){
-                letterIn = letterIn + (letter + "- ");
+            if(letterIn.indexOf(lttr) < 0){
+                letterIn = letterIn + (lttr + "- ");
                 txtLetterIn.setText(letterIn);
                 chances++;
                 int result = ((MAX_TRIES + 1) - chances);
