@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SimilarArtist</string>
+    <string name="similar_artists">SIMILAR ARTISTS</string>
+    <string name="txt_search_artist">Search for an artist</string>
+    <string name="txt_similar_choice">Similar artists of your choice</string>
+    <string name="search">Search</string>
 </resources>
