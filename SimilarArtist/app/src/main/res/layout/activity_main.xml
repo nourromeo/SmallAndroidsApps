@@ -49,7 +49,7 @@
                 android:backgroundTint="@color/secondary_color"
                 android:fontFamily="serif-monospace"
                 android:onClick="StartClick"
-                android:text="@string/search"
+                android:text="@string/start"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
