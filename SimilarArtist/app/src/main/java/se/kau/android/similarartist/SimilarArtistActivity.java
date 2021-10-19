@@ -18,7 +18,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -55,7 +54,7 @@ public class SimilarArtistActivity extends AppCompatActivity {
         });
     }
 
-    class RunningInBackgroud extends AsyncTask<Integer, Void, Exception> {
+    class RunningInBackgroud extends AsyncTask<String, Void, ArrayList<String>> {
         private static final String TAG = "SimilarArtist";
         private Exception exception = null;
         private Context ctx;
@@ -65,7 +64,7 @@ public class SimilarArtistActivity extends AppCompatActivity {
         }
 
         @Override
-        protected Exception doInBackground(Integer... integers) {
+        protected ArrayList<String> doInBackground(String... strings) {
             Log.d(TAG, "doInBackground running");
             artistList = new ArrayList<String>();
 
@@ -93,17 +92,17 @@ public class SimilarArtistActivity extends AppCompatActivity {
                 exception = e;
             }
 
-            return exception;
+            return artistList;
         }
 
         @Override
-        protected void onPostExecute(Exception s) {
-            Log.d(TAG, "onPostExecute running: ");
-            super.onPostExecute(s);
-
+            protected void onPostExecute(ArrayList<String> s) {
+                Log.d(TAG, "onPostExecute running: " + s);
+                super.onPostExecute(s);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(SimilarArtistActivity.this, android.R.layout.simple_list_item_1, artistList);
             lvSimilarArtist.setAdapter(adapter);
         }
+
     }
 
     // slutligen är denna metoden, jag fick den från https://www.youtube.com/watch?v=CW5Xekqfx3I
