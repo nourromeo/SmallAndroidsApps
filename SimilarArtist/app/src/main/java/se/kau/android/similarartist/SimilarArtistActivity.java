@@ -2,6 +2,7 @@ package se.kau.android.similarartist;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -56,11 +57,21 @@ public class SimilarArtistActivity extends AppCompatActivity {
 
     class RunningInBackgroud extends AsyncTask<String, Void, ArrayList<String>> {
         private static final String TAG = "SimilarArtist";
+        ProgressDialog progressDialog = new ProgressDialog(SimilarArtistActivity.this);
         private Exception exception = null;
         private Context ctx;
 
         public RunningInBackgroud(Context ctxIn) {
             this.ctx = ctxIn;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog.setMessage("Busy loading... please wait...");
+            progressDialog.show();
+
         }
 
         @Override
@@ -101,6 +112,10 @@ public class SimilarArtistActivity extends AppCompatActivity {
                 super.onPostExecute(s);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(SimilarArtistActivity.this, android.R.layout.simple_list_item_1, artistList);
             lvSimilarArtist.setAdapter(adapter);
+            Log.d(TAG, "the movieList is: " + artistList);
+
+            progressDialog.dismiss();
+
         }
 
     }
