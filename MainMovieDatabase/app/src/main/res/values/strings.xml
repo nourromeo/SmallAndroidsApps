@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MainMovieDatabase</string>
+    <string name="movie_database">MOVIE DATABASE</string>
+    <string name="txt_search_movies">Search for a movie</string>
+    <string name="txt_similar_choice">Similar movies of your choice</string>
+    <string name="txt_list_of_movie">List of movies</string>
+    <string name="search">Search</string>
+    <string name="start">START</string>
+    <string name="first_activity_title">MOVIE DATABASE</string>
+    <string name="movie_database_application">MOVIE\nDATABASE\nAPPLICATION</string>
+    <string name="short_list">SHORT LIST</string>
+</resources>
