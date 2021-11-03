@@ -69,7 +69,6 @@ public class MovieDatabaseActivity extends AppCompatActivity {
         btnSearch=findViewById(R.id.btnSearch);
         lvMovieList = findViewById(R.id.lvMovieList);
 
-
         Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
         Network network = new BasicNetwork(new HurlStack());
         requestQueue = new RequestQueue(cache, network);
@@ -79,10 +78,10 @@ public class MovieDatabaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.e(TAG, "search button clicked");
-                closeKeyboard();
-
                 backgroundRunner background = new backgroundRunner(getApplicationContext());
                 background.execute();
+
+                closeKeyboard();
             }
         });
     }
@@ -96,7 +95,7 @@ public class MovieDatabaseActivity extends AppCompatActivity {
 
 
 
-    /****************************************************************** AsyncTask klass ******************************************************************/
+    /************************************* AsyncTask klass ***************************************/
 
     class backgroundRunner extends AsyncTask<Void, Void, Void> {
         private static final String TAG = "JSONMovie";
@@ -121,7 +120,8 @@ public class MovieDatabaseActivity extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             Log.d(TAG, "doInBackground running");
 
-            String url = "https://api.themoviedb.org/3/search/movie?api_key=b14813050c00ecdd2f664fd50d3d23e1&language=en-US&query=" + userMovieInput.getText() + "&include_adult=false";
+            String url = "https://api.themoviedb.org/3/search/movie?api_key=b14813050c00ecdd2f664fd50d3d23e1&language=en-US&query="
+                    + userMovieInput.getText() + "&include_adult=false";
             Log.d(TAG, "the URL: " + url);
             Log.d(TAG, "the movieInput: " + userMovieInput.getText());
 
@@ -133,7 +133,6 @@ public class MovieDatabaseActivity extends AppCompatActivity {
 
                         @Override
                         public void onResponse(JSONObject response) {
-
                             try {
                                 JSONArray jsonArray = response.getJSONArray("results");
 
@@ -144,7 +143,6 @@ public class MovieDatabaseActivity extends AppCompatActivity {
 
                                     movieListArray.add((i+1) + ": " + title);
                                     movieIDList.add(id);
-
                                 }
                                 Log.d(TAG, "the movieList is: " + movieListArray);
 
