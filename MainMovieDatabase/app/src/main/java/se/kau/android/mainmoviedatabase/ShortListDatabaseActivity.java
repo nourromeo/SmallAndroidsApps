@@ -29,7 +29,6 @@ public class ShortListDatabaseActivity extends AppCompatActivity {
         lvShortList = findViewById(R.id.lwShortList);
 
         shortListArray = new ArrayList<String>();
-
         provideDatabaseToShortList();
 
         adapter = new ArrayAdapter<String>(ShortListDatabaseActivity.this,

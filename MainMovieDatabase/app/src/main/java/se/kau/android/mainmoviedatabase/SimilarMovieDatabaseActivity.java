@@ -63,7 +63,6 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
         requestQueue.start();
 
         mySharedPreferences();
-
         movieIDListArray = new ArrayList<String>();
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
@@ -83,8 +82,9 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
                             adapter = new ArrayAdapter<String>(SimilarMovieDatabaseActivity.this,
                                     android.R.layout.simple_list_item_1, movieIDListArray);
                             lvSimilarMovieList.setAdapter(adapter);
-                            // حاول تغير الى الاون كليك.. يعني تحدد اللي تبيه يصير في اللستة المفضلة وبعدين تضغط عشان تشوف اللستة المفضلة
+
                             lvSimilarMovieList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
                                 @Override
                                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                     insertToDatabase(movieIDListArray.get(i));
@@ -92,16 +92,15 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
                                     // finish();
                                     Log.d(TAG,"setOnItemClickListener movieIDList is showing: " + movieIDListArray.get(i));
 
-                                    Toast.makeText(SimilarMovieDatabaseActivity.this, "the movie is saved in your shortlist!", Toast.LENGTH_SHORT).show();
-
+                                    Toast.makeText(SimilarMovieDatabaseActivity.this, movieIDListArray.get(i) + " is saved in your shortlist!", Toast.LENGTH_LONG).show();
                                 }
-
                             });
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
+
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
@@ -111,7 +110,6 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
                 });
 
         requestQueue.add(jsonObjectRequest);
-
     }
 
     public void mySharedPreferences(){
@@ -124,23 +122,21 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
     }
 
     public void shortListOnClick(View v){
-        Log.d(TAG,"shortList button onclick");
+        Log.d(TAG,"shortListOnClick button onclick");
         intent = new Intent(this, ShortListDatabaseActivity.class);
         startActivity(intent);
 
     }
 
-    public long insertToDatabase(String s_name){
-        Log.d(TAG,"DatabaseHandler onInsert Running");
+    public void insertToDatabase(String s_name){
+        Log.d(TAG,"DatabaseHandler insertToDatabase Running");
 
         SQLiteDatabase sd = dbp.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DatabaseProvider.FIELD1, s_name);
         long result = sd.insert(DatabaseProvider.TABLE_NAME, null, values);
-        Log.d(TAG, "DatabaseHandler onInsert() writing:" + result);
-        Log.d(TAG,"onInsert: " + s_name);
-
-        return result;
+        Log.d(TAG, "DatabaseHandler insertToDatabase writing:" + result);
+        Log.d(TAG,"insertToDatabase: " + s_name);
     }
 
 }
