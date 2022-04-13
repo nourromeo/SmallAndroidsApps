@@ -63,7 +63,7 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
         requestQueue.start();
 
         mySharedPreferences();
-        movieIDListArray = new ArrayList<String>();
+        movieIDListArray = new ArrayList<>();
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {

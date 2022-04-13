@@ -126,7 +126,7 @@ public class MovieDatabaseActivity extends AppCompatActivity {
             Log.d(TAG, "the movieInput: " + userMovieInput.getText());
 
             movieListArray = new ArrayList<String>();
-            movieIDList = new ArrayList<String>();
+            movieIDList = new ArrayList<String>(); // inte säker på det
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                     (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -180,12 +180,13 @@ public class MovieDatabaseActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.d(TAG, "onPreExecute()onItemClick running");
+
                 SharedPreferences mySharedPreferences =getSharedPreferences(MOVIEPREFS, mode);
                 SharedPreferences.Editor editor = mySharedPreferences.edit();
                 editor.putString(KEY, movieIDList.get(i));
                 Log.d(TAG, "MOVIEPREFS: " + movieIDList.get(i));
-
                 editor.apply();
+
                 intent = new Intent(MovieDatabaseActivity.this, SimilarMovieDatabaseActivity.class);
                 startActivity(intent);
             }
