@@ -49,7 +49,7 @@ public class SimilarMovieDatabaseActivity extends AppCompatActivity {
     Button btnShortList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
         Log.d(TAG, " similarMovieList onCreate running");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_similar_movie_database);
